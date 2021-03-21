@@ -25,7 +25,6 @@ if err != sl.ERROR_CODE.SUCCESS:
 	exit(1)
 
 
-
 i = 0
 image = sl.Mat()
 runtime_parameters = sl.RuntimeParameters()
