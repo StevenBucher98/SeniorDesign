@@ -6,14 +6,14 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 mpl.use('tkagg') # Makes you able to use png's with OPENCV
 
-# img_path = 'HomeFlowerImages/flower1.jpeg'
+img_path = 'HomeFlowerImages/flower1.jpeg'
 # img_path = 'flowers2.jpg'
-img_path = 'Test_Depths/test_5_2021-02-03_23:29:49.png'
+# img_path = 'Test_Depths/test_5_2021-02-03_23:29:49.png'
 # img_path = 'Test_Depths/test_8_2021-02-03_22:55:35.png'
 
 
-# img = cv2.imread(img_path)
-img = cv2.imread(img_path, cv2.IMREAD_UNCHANGED) # USE FOR PNG
+img = cv2.imread(img_path)
+# img = cv2.imread(img_path, cv2.IMREAD_UNCHANGED) # USE FOR PNG
 
 # Convert to HSV and Greyscale respectively
 hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -53,6 +53,7 @@ for c in contours:
     print(x, y, w, h)
     print("________________")
     cv2.rectangle(img, (x, y), (x+w, y+h), (255,0,0), 10)
+
 
 f, axes = plt.subplots(1, 1)
 axes.imshow(img)
